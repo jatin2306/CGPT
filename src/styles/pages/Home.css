@@ -1,0 +1,32 @@
+/* =========================
+   PAGE ROOT
+========================= */
+.page-root {
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* =========================
+   FIRST NAV LOCK
+========================= */
+.scroll-lock {
+  height: 100vh;
+  overflow-y: auto;        /* 🔑 THIS CAPTURES SCROLL */
+  overscroll-behavior: contain; /* ⛔ prevents scroll chaining */
+}
+
+/* Optional: smooth experience */
+.scroll-lock {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   NORMAL PAGE FLOW
+========================= */
+.normal-flow {
+  min-height: 100vh;
+}
+.home-container{
+  background-color: black;
+  padding-top: var(--header-height, 72px);
+}

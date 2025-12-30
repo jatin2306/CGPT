@@ -1,0 +1,6 @@
+.trust-container {
+  width: 100%;
+  background-color: black;
+  overflow: visible;
+  padding-top: var(--header-height, 72px);
+}

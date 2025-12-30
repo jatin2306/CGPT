@@ -1,0 +1,40 @@
+/* =========================
+   CUBE ROTATING TEXT
+   Font: 44px
+========================= */
+
+.cube-wrapper {
+ top: 8vh;
+ position: absolute;
+  height: 52px;               /* visible area for one line */
+  overflow: hidden;
+  display: flex;
+}
+
+/* Vertical stack */
+.cube-inner {
+  
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Each sentence */
+.cube-face {
+  height: 52px;               /* must match wrapper */
+  display: flex;
+  align-items: center;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 44px;
+  line-height: 52px;          /* IMPORTANT for vertical centering */
+  font-weight: 400;
+
+  white-space: nowrap;
+  opacity: 0.9;
+
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
