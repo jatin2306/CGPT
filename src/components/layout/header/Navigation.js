@@ -5,11 +5,6 @@ import YOU from "../../../assets/images/ban2.png";
 import AID from "../../../assets/images/ban3.png";
 import ScrollReveal from "../../ui/ScrollReveal";
 import TimedReveal from "../../ui/TimedReveal";
-import Reactange from "../../../assets/images/Rectangle.png";
-import removedai from "../../../assets/images/removedai.png";
-import removedyou from "../../../assets/images/removedyou.png";
-import removedmd from "../../../assets/images/removedmd.png";
-import mdban from "../../../assets/images/mdban.png";
 
 function Navigation() {
   const [navStyle, setNavStyle] = useState({
@@ -19,7 +14,6 @@ function Navigation() {
     position: "fixed",
     scale: 1,
   });
-  const [showGradient, setShowGradient] = useState(false);
   const [heroStyle, setHeroStyle] = useState({ top: "90%", opacity: 1 });
   const [showParagraph, setShowParagraph] = useState(false);
 

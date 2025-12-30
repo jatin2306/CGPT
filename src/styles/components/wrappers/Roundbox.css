@@ -6,8 +6,8 @@
 
 .sg-wrappe {
   position: sticky;
-  top: 20vh;
-  height: 80vh;
+  top: calc(20vh + var(--header-height, 72px));
+  height: calc(80vh - var(--header-height, 72px));
   width: 98%;
   margin: 0 auto;
   border-radius: 40px;
@@ -21,7 +21,7 @@
 }
 .sg-wrappe.freeze {
   position: fixed !important;
-  top: 20vh;
+  top: calc(20vh + var(--header-height, 72px));
   left: 1%;
   right: 1%;
   width: 98%;

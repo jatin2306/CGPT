@@ -10,21 +10,30 @@ export default function HowItWorks() {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    let ticking = false;
-    let rafId = null;
+    if (!wrapperRef.current) return;
 
+    const wrapper = wrapperRef.current;
+    const sectionHeight = wrapper.offsetHeight / 3;
+    let lastIndex = 0;
+
+    const updateIndex = () => {
+      if (!wrapperRef.current) return;
+      const rect = wrapper.getBoundingClientRect();
+      const scrollProgress = Math.max(0, Math.min(1, -rect.top / (rect.height - window.innerHeight)));
+      const newIndex = Math.floor(scrollProgress * 2.99);
+      const clampedIndex = Math.max(0, Math.min(2, newIndex));
+      
+      if (clampedIndex !== lastIndex) {
+        lastIndex = clampedIndex;
+        setActiveIndex(clampedIndex);
+      }
+    };
+
+    let ticking = false;
     const onScroll = () => {
       if (!ticking) {
-        rafId = requestAnimationFrame(() => {
-          if (!wrapperRef.current) {
-            ticking = false;
-            return;
-          }
-          const rect = wrapperRef.current.getBoundingClientRect();
-          const scrolled = -rect.top;
-          let index = Math.floor(scrolled / (rect.height / 3.2));
-          index = Math.max(0, Math.min(index, 2));
-          setActiveIndex(index);
+        requestAnimationFrame(() => {
+          updateIndex();
           ticking = false;
         });
         ticking = true;
@@ -32,10 +41,10 @@ export default function HowItWorks() {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
+    updateIndex();
+
     return () => {
       window.removeEventListener("scroll", onScroll);
-      if (rafId) cancelAnimationFrame(rafId);
     };
   }, []);
 
@@ -111,7 +120,7 @@ export default function HowItWorks() {
                 key={i}
                 className={`hiw-card ${activeIndex === i ? "active" : ""} ${i < activeIndex ? "prev" : ""}`}
                style={{
-  transform: `translateY(calc(${(i - activeIndex) * 100}% + ${(i - activeIndex) * 25}px))`,
+  transform: `translate3d(0, calc(${(i - activeIndex) * 100}% + ${(i - activeIndex) * 25}px), 0)`,
   opacity: i === activeIndex ? 1 : 0.4,
   zIndex: steps.length - i
 }}
