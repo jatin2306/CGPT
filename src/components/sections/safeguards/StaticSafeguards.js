@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import "../../../styles/components/sections/safeguards/StaticSafeguards.css";
 import Try from "./Safeguards";
-import { useState } from "react";
+
 import Sample from "../../../pages/Sample";
 
 function StaticSafeguards() {
