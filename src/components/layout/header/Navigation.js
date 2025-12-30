@@ -1,8 +1,5 @@
 import "../../../styles/components/layout/header/Navigation.css";
 import { useEffect, useState } from "react";
-import MD from "../../../assets/images/ban1.png";
-import YOU from "../../../assets/images/ban2.png";
-import AID from "../../../assets/images/ban3.png";
 import ScrollReveal from "../../ui/ScrollReveal";
 import TimedReveal from "../../ui/TimedReveal";
 

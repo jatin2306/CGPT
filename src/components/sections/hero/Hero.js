@@ -2,7 +2,6 @@ import "../../../styles/components/sections/hero/Hero.css";
 import doctor from "../../../assets/images/doctorimage.png";
 import infoCard from "../../../assets/images/doctbox.png";
 import RotatingHeadline from "./RotatingHeadline";
-import RotatingBadge from "./RotatingBadge";
 
 export default function Hero() {
   return (

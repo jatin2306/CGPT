@@ -13,7 +13,6 @@ export default function HowItWorks() {
     if (!wrapperRef.current) return;
 
     const wrapper = wrapperRef.current;
-    const sectionHeight = wrapper.offsetHeight / 3;
     let lastIndex = 0;
 
     const updateIndex = () => {

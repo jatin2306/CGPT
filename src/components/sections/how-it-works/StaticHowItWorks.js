@@ -21,7 +21,7 @@ function StaticHowItWorks() {
               <p>
                 <strong>Your AI Doctor studies the way your body behaves</strong>
               </p>
-              <img src={arrow} className="hiw-arrow"/>
+              <img src={arrow} className="hiw-arrow" alt=""/>
             </div>
 
             <div className="hiw-step">

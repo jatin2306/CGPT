@@ -6,7 +6,6 @@ import outcomeSleep from "../../../assets/images/03.jpg";
 import outcomeMeals from "../../../assets/images/04.jpg";
 import outcomeEnergy from "../../../assets/images/05.jpg";
 import outcomeRoutines from "../../../assets/images/06.jpg";
-import TimedReveal from "../../ui/TimedReveal";
 import ScrollReveal from "../../ui/ScrollReveal";
 
 const data = [
@@ -23,7 +22,6 @@ const ClinicalOutcomes = () => {
   const cardsRef = useRef(null);
 
   const lastScroll = useRef(window.scrollY);
-  const currentX = useRef(0);
 useEffect(() => {
   const targetX = { current: 0 };
   const renderedX = { current: 0 };

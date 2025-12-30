@@ -17,7 +17,6 @@ function Roundbox() {
     const stickyTopPx = window.innerHeight * 0.2 + headerHeight;
     const viewportHeight = window.innerHeight;
     let rafId = null;
-    let isActive = false;
 
     const updateScroll = () => {
       if (!stage || !wrapper || !scrollContainer) return;
@@ -26,12 +25,10 @@ function Roundbox() {
       const isVisible = stageRect.bottom > 0 && stageRect.top < viewportHeight * 2;
 
       if (!isVisible) {
-        isActive = false;
-        rafId = requestAnimationFrame(updateScroll);
+          rafId = requestAnimationFrame(updateScroll);
         return;
       }
 
-      isActive = true;
       const freezeDistance = viewportHeight * 5;
       const passedStage = viewportHeight - stageRect.bottom;
 
@@ -43,9 +40,6 @@ function Roundbox() {
 
       const entryStart = viewportHeight;
       const entryEnd = stickyTopPx;
-      let entryProgress = (stageRect.top - entryEnd) / (entryStart - entryEnd);
-      entryProgress = Math.max(0, Math.min(1, entryProgress));
-
       const isSticky = stageRect.top <= stickyTopPx - 20;
 
       if (isSticky) {

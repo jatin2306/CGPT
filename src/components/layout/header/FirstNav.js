@@ -1,25 +1,10 @@
 import "../../../styles/components/layout/header/FirstNav.css";
-import logo from "../../../assets/images/logod.png";
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import doctor from "../../../assets/images/Gemini.png";
-import RotatingBadge from "../../sections/hero/RotatingBadge";
 import RotatingHeadline from "../../sections/hero/RotatingHeadline";
-import infoCard from "../../../assets/images/doctbox.png";
-import Badge from "../../../assets/images/badge.png";
 import TimedReveal from "../../ui/TimedReveal";
 
 function FirstNav() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [revealed, setRevealed] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 768) setMenuOpen(false);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   useEffect(() => {
     document.title = "ChronicGPT – Your Personal AI Doctor";
@@ -42,7 +27,7 @@ function FirstNav() {
   }, []);
 
   return (
-    <div className={`fnav-container ${revealed ? "reveal-done" : ""}`}>
+    <div className="fnav-container">
       <div className="divline" />
 
       <div className="hero-inner">

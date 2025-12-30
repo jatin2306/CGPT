@@ -1,5 +1,4 @@
 import "../styles/pages/sample.css";
-import { useEffect, useRef } from "react";
 import yd1 from "../assets/images/yd1.png";
 import yd2 from "../assets/images/yd2.png";
 import yd3 from "../assets/images/yd3.png";

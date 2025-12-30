@@ -46,7 +46,7 @@ export default function JourneySteps() {
     updateActive();
 
     return () => window.removeEventListener("scroll", updateActive);
-  }, [isMobile]);
+  }, [isMobile, steps.length]);
 
   const steps = [
     {

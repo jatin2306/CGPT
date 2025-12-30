@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import "../../../styles/components/sections/safeguards/StaticSafeguards.css";
-import trustImg from "../../../assets/images/image 1587.jpg";
 import Try from "./Safeguards";
 import { useState } from "react";
 import Sample from "../../../pages/Sample";
@@ -66,7 +65,6 @@ function StaticSafeguards() {
 
       const currentPageY = window.scrollY;
       const distanceScrolledSinceTimerEnded = currentPageY - scrollStartPos.current;
-      const totalTravelDistance = stageRect.height - wrapperRect.height - (scrollStartPos.current - (window.scrollY + stageRect.top));
       
      const travel = stageRect.height - wrapperRect.height;
 let progress = travel > 0 ? distanceScrolledSinceTimerEnded / travel : 0;

@@ -39,9 +39,9 @@ function Footer() {
         <div className="footer-trust">
           <h4>Trusted by healthcare professionals & patients alike</h4>
           <div className="trust-badge">
-            <img src={h1} className="img100 img10"/>
-            <img src={h2} className="img100 img20"/>
-            <img src={h3} className="img100 img30"/>
+            <img src={h1} className="img100 img10" alt=""/>
+            <img src={h2} className="img100 img20" alt=""/>
+            <img src={h3} className="img100 img30" alt=""/>
           </div>
           <div className="footer-social">
   <h4>Connect with us</h4>

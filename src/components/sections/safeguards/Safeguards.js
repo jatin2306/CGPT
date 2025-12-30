@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Lenis from "@studio-freight/lenis";
 import "../../../styles/components/sections/safeguards/Safeguards.css";
-import signup from "../../../assets/images/Frame.png";
 import img1 from "../../../assets/images/Play10.png";
 import img4 from "../../../assets/images/Play (2).png";
 import img5 from "../../../assets/images/Play (3).png";
@@ -79,7 +78,7 @@ function Safeguards() {
         ].map((item, i) => (
           <article key={i} className={`section r${i + 1}`}>
             <div className="top-row">
-              <img src={item.img} className="imges"/>
+              <img src={item.img} className="imges" alt={item.title || ""}/>
               <h3>{item.title}</h3>
             </div>
             <h6>{item.desc}</h6>

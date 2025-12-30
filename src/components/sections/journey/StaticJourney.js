@@ -1,8 +1,6 @@
 import { useEffect, useRef } from "react";
 import "../../../styles/components/sections/journey/StaticJourney.css";
 import imgIncluded from "../../../assets/images/img1.jpg";
-import imgInsurance from "../../../assets/images/img2.jpg";
-import imgOptional from "../../../assets/images/img3.jpg";
 import SS from "./JourneySteps";
 
 function StaticJourney() {
