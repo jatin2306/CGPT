@@ -38,8 +38,6 @@ function Roundbox() {
         wrapper.classList.remove("freeze");
       }
 
-      const entryStart = viewportHeight;
-      const entryEnd = stickyTopPx;
       const isSticky = stageRect.top <= stickyTopPx - 20;
 
       if (isSticky) {

@@ -12,42 +12,6 @@ export default function JourneySteps() {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const onResize = () => setIsMobile(window.innerWidth <= 768);
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  useEffect(() => {
-    if (isMobile) return;
-
-    function updateActive() {
-      const stage = stageRef.current;
-      if (!stage) return;
-
-      const rect = stage.getBoundingClientRect();
-      const scrollHeight = stage.offsetHeight - window.innerHeight;
-
-      const progress = Math.min(
-        Math.max(-rect.top / scrollHeight, 0),
-        1
-      );
-
-      const total = steps.length;
-      const index = Math.min(
-        total - 1,
-        Math.floor(progress * total)
-      );
-
-      setActiveIndex(index);
-    }
-
-    window.addEventListener("scroll", updateActive);
-    updateActive();
-
-    return () => window.removeEventListener("scroll", updateActive);
-  }, [isMobile, steps.length]);
-
   const steps = [
     {
       number: "01",
@@ -87,6 +51,42 @@ export default function JourneySteps() {
       img: img6,
     },
   ];
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
+    function updateActive() {
+      const stage = stageRef.current;
+      if (!stage) return;
+
+      const rect = stage.getBoundingClientRect();
+      const scrollHeight = stage.offsetHeight - window.innerHeight;
+
+      const progress = Math.min(
+        Math.max(-rect.top / scrollHeight, 0),
+        1
+      );
+
+      const total = steps.length;
+      const index = Math.min(
+        total - 1,
+        Math.floor(progress * total)
+      );
+
+      setActiveIndex(index);
+    }
+
+    window.addEventListener("scroll", updateActive);
+    updateActive();
+
+    return () => window.removeEventListener("scroll", updateActive);
+  }, [isMobile, steps.length]);
 
   return (
     <section className="ss-stage" ref={stageRef}>

@@ -15,7 +15,6 @@ function StaticSafeguards() {
   const currentScroll = useRef(0);
   const stickyStartTime = useRef(null);
   const scrollStartPos = useRef(null);
-  const [isLocked, setIsLocked] = useState(true);
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
